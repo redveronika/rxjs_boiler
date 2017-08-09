@@ -1,16 +1,22 @@
+const path = require('path');
+
 module.exports = {
-	entry: './src/app.js',
+	entry: {
+	    app: './src/app.js'
+    },
+    devtool: 'inline-source-map',
+	devServer: {
+	    contentBase: './dist'
+    },
 	output: {
-		path: './dist',
-		filename:'app.bundle.js'
-	},
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
+    },
 	module: {
 		loaders: [{
 			exclude: '/node_modules/',
-			loader: 'babel-loader',
-			query: {
-				presets: ['es2015']
-			}
+			loader: 'babel-loader'
 		}]
 	}
-}
+};
