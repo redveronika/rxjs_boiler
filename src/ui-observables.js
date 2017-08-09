@@ -11,8 +11,8 @@ export default function uiObservables () {
         (e) => {
             console.log('Clicked', e)
         },
-        (err) => {
-            console.log(err)
+        (error) => {
+            console.error(error)
         },
         () => {
             console.log('Completed')
@@ -26,8 +26,8 @@ export default function uiObservables () {
             console.log('Clicked', e)
             output.innerText = e.target.value;
         },
-        (err) => {
-            console.log(err)
+        (error) => {
+            console.error(error);
         },
         () => {
             console.log('Completed')
